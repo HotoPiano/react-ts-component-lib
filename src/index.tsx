@@ -1,3 +1,6 @@
+export { default as Body } from "./components/Body";
+export { default as Head } from "./components/Head";
+export { default as Footer } from "./components/Footer";
 export { default as Header } from "./components/Header";
 export { default as Button } from "./components/Button";
 export { default as LinkText } from "./components/LinkText";
