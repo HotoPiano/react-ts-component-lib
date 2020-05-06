@@ -2,8 +2,7 @@
 
 ## import usage (WIP, actual components are not fully styled yet)
 
-Extremely easy to use component library, see [storybook](https://vercel.com/hotopiano/react-ts-component-lib)
-
+Extremely easy to use component library, see [storybook](https://react-ts-component-lib.now.sh/)
 
 ### `yarn add react-ts-component-lib`
 
