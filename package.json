@@ -1,8 +1,12 @@
 {
   "name": "react-ts-component-lib",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "",
-  "keywords": [],
+  "keywords": [
+    "react",
+    "typescript",
+    "component"
+  ],
   "author": "",
   "license": "ISC",
   "main": "lib/index.js",
@@ -39,5 +43,12 @@
     "webpack": "^4.43.0",
     "yarn": "^1.22.4"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HotoPiano/react-ts-component-lib"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@HotoPiano"
+  }
 }
