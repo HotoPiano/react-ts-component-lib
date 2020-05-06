@@ -33,7 +33,7 @@ Runs the storybook locally, updates on save (webpack).
 
 ### `yarn build-storybook`
 
-Runs the storybook locally, updates on save (webpack).
+Generates "storybook-static" folder, prepared to publish as storybook page.
 
 ### `yarn build`
 
