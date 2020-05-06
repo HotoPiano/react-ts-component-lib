@@ -7,6 +7,7 @@ Extremely easy to use component library, see [storybook](https://vercel.com/hoto
 
 ### `yarn add react-ts-component-lib`
 
+<br/>
 
 Components are functional so that autocomplete for all props are available even if typescript is not used.
 
@@ -19,7 +20,7 @@ import { Button } from "react-ts-component-lib
 <Button variant="primary">My primary button</Button>
 ```
 
-<br/><br/><br/><br/>
+<br/><br/><br/>
 
 
 ## Developer usage
