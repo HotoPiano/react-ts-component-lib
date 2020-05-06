@@ -1,6 +1,6 @@
 {
-  "name": "@hotopiano/react-ts-component-lib",
-  "version": "1.0.13",
+  "name": "react-ts-component-lib",
+  "version": "1.0.19",
   "description": "",
   "keywords": [
     "react",
@@ -47,8 +47,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/HotoPiano/react-ts-component-lib"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@HotoPiano"
   }
 }
