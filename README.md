@@ -1,15 +1,39 @@
 # react-ts-component-lib
-Easy setup for a complete component library across react/ts projects. For now just a really easy to use template, but react/typescript components can be added to project with `yarn add react-ts-component-lib` (when published) and will be updated with more complex components and fancier styling. Components can be styled with less.
 
-## Available Scripts
+## import usage (WIP, actual components are not fully styled yet)
 
-In the project directory, you can run:
+Extremely easy to use component library, see [storybook](https://vercel.com/hotopiano/react-ts-component-lib)
 
-### `yarn storybook`
+
+### `yarn add react-ts-component-lib`
+
+
+Components are functional so that autocomplete for all props are available even if typescript is not used.
+
+
+Example:
+
+```
+import { Button } from "react-ts-component-lib
+
+<Button variant="primary">My primary button</Button>
+```
+
+<br/><br/><br/><br/>
+
+
+## Developer usage
+
+Easy setup for a complete component library across react/ts projects. For now just a really easy to use template, components can be styled with less.
+
+### `yarn start-storybook`
 
 Runs the storybook locally, updates on save (webpack).
 
+### `yarn build-storybook`
+
+Runs the storybook locally, updates on save (webpack).
 
 ### `yarn build`
 
-Distributes to "lib" folder (rollup). 
+Distributes to "lib" folder (rollup), prepared to publish as your own package.
