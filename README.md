@@ -20,7 +20,7 @@ import { Button } from "react-ts-component-lib
 <Button variant="primary">My primary button</Button>
 ```
 
-<br/><br/><br/>
+<br/><br/>
 
 
 ## Developer usage
