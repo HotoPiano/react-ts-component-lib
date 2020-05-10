@@ -1,56 +1,76 @@
-import Body from "./Body";
-import Head from "./Head";
-import Footer from "./Footer";
 import React from "react";
-import Button from "./Button";
+
+import "./index.less";
+
 import Header from "./Header";
-import LinkText from "./LinkText";
+import Footer from "./Footer";
+import H from "./H";
+import Button from "./Button";
+import Link from "./Link";
+import DropDown from "./Dropdown";
 
 const Basic: React.FC = () => {
   return (
-    <Body>
-      <Head>
-        <Header type="h1">Header1</Header>
-      </Head>
-      <Header type="h2">Header2</Header>
-      <Header type="h3">Header3</Header>
-      <Header type="h4">Header4</Header>
-      <Header type="h5">Header5</Header>
-      <Header type="h6">Header6</Header>
-      <Button
-        variant="primary"
-        //style={{ padding: 20 }}
-        onClick={() => {
-          console.log("clicked!");
-        }}
-      >
-        testImportedButtonPrimary
-      </Button>
-      <Button
-        variant="secondary"
-        //style={{ padding: 20 }}
-        onClick={() => {
-          console.log("clicked!");
-        }}
-      >
-        testImportedButtonPrimary
-      </Button>
-      <Button
-        variant="primary"
-        disabled
-        //style={{ padding: 20 }}
-        onClick={() => {
-          console.log("clicked!");
-        }}
-      >
-        testImportedButtonPrimaryDisabled
-      </Button>
-      <LinkText href="#/test">testlinkBrightBackground</LinkText>
-      <LinkText href="#/test" darkBackground>
-        testlinkDarkBackground
-      </LinkText>
-      <Footer>text</Footer>
-    </Body>
+    <>
+      <Header>
+        <H type="h1" darkBackground>
+          Header1 darkBackground
+        </H>
+        <Link href="#/test" darkBackground>
+          Link darkBackground
+        </Link>
+      </Header>
+      <div style={{ minHeight: 500 }}>
+        <H type="h2">Header2</H>
+        <H type="h3">Header3</H>
+        <H type="h4">Header4</H>
+        <H type="h5">Header5</H>
+        <H type="h6">Header6</H>
+        <Button
+          variant="default"
+          style={{ margin: 10 }}
+          onClick={() => {
+            console.log("clicked!");
+          }}
+        >
+          Button default
+        </Button>
+        <Button
+          variant="primary"
+          style={{ margin: 10 }}
+          onClick={() => {
+            console.log("clicked!");
+          }}
+        >
+          Button primary
+        </Button>
+        <Button
+          variant="secondary"
+          style={{ margin: 10 }}
+          onClick={() => {
+            console.log("clicked!");
+          }}
+        >
+          Button secondary
+        </Button>
+        <Button
+          variant="primary"
+          disabled
+          style={{ margin: 10 }}
+          onClick={() => {
+            console.log("clicked!");
+          }}
+        >
+          Button disabled
+        </Button>
+        <Link href="#/test">Link</Link>
+      </div>
+      <Footer>
+        <H type="h3" darkBackground>
+          Header3
+        </H>
+      </Footer>
+    </>
   );
 };
 

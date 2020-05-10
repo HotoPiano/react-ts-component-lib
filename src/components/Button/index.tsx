@@ -2,7 +2,7 @@ import React from "react";
 import "./index.less";
 
 type Props = {
-  variant: "primary" | "secondary";
+  variant: "default" | "primary" | "secondary";
   className?: string;
   style?: React.CSSProperties | undefined;
   disabled?: boolean;
@@ -21,14 +21,15 @@ const Button: React.FC<Props> = ({
   onClick,
   onMouseOver,
 }) => {
+  const _className =
+    "button button__" +
+    variant +
+    (disabled ? " button--disabled" : "") +
+    (className ? " " + className : "");
   return (
     <button
       disabled={disabled}
-      className={
-        variant +
-        (disabled ? " disabled" : "") +
-        (className ? " " + className : "")
-      }
+      className={_className}
       onClick={onClick}
       style={style}
       onMouseOver={onMouseOver}

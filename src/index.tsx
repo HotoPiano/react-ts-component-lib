@@ -1,9 +1,10 @@
-export { default as Body } from "./components/Body";
-export { default as Head } from "./components/Head";
-export { default as Footer } from "./components/Footer";
+import "./components/index.less";
 export { default as Header } from "./components/Header";
+export { default as Footer } from "./components/Footer";
+export { default as H } from "./components/H";
 export { default as Button } from "./components/Button";
-export { default as LinkText } from "./components/LinkText";
+export { default as Link } from "./components/Link";
+export { default as Dropdown } from "./components/Dropdown";
 
 /*
 export let isDarkMode =

@@ -1,0 +1,41 @@
+@import "./palette.less";
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+* {
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+}
+
+//Hightlighted text
+::selection {
+  background-color: @color-skyblue;
+  background: @color-skyblue;
+}
+::-moz-selection {
+  background-color: @color-skyblue;
+  background: @color-skyblue;
+}
+
+.darkBackground {
+  color: @color-floralwhite;
+}
+
+.darkBackground-link:hover {
+  color: @color-lightcyan;
+}
+
+.brightBackground {
+  color: @color-jetblack;
+}
+
+.brightBackground-link:hover {
+  color: @color-violetpink;
+}

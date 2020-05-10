@@ -10,7 +10,7 @@ type Props = {
   disabled?: boolean;
 };
 
-const LinkText: React.FC<Props> = ({
+const Link: React.FC<Props> = ({
   children,
   darkBackground,
   className,
@@ -18,6 +18,12 @@ const LinkText: React.FC<Props> = ({
   onClick,
   href,
 }) => {
+  const _className =
+    "link " +
+    className +
+    (darkBackground
+      ? " darkBackground darkBackground-link"
+      : " brightBackground brightBackground-link");
   /*
   const variantStyle: React.CSSProperties = darkBackground
     ? {
@@ -28,18 +34,10 @@ const LinkText: React.FC<Props> = ({
   //style={{ ...style, ...defaultStyle, ...variantStyle }}
     */
   return (
-    <a
-      href={href}
-      className={
-        (darkBackground ? "darkBackround" : "brightBackground") +
-        (className ? " " + className : "")
-      }
-      onClick={onClick}
-      style={style}
-    >
+    <a href={href} className={_className} onClick={onClick} style={style}>
       {children}
     </a>
   );
 };
 
-export default LinkText;
+export default Link;

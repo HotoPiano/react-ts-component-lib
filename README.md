@@ -10,7 +10,6 @@ Extremely easy to use component library, see [storybook](https://react-ts-compon
 
 Components are functional so that autocomplete for all props are available even if typescript is not used.
 
-
 Example:
 
 ```
@@ -19,8 +18,7 @@ import { Button } from "react-ts-component-lib
 <Button variant="primary">My primary button</Button>
 ```
 
-<br/><br/>
-
+<br/>
 
 ## Developer usage
 

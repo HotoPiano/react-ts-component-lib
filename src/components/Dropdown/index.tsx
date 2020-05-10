@@ -6,12 +6,12 @@ type Props = {
   style?: React.CSSProperties | undefined;
 };
 
-const Footer: React.FC<Props> = ({ children, className, style }) => {
+const Button: React.FC<Props> = ({ children, className, style }) => {
   return (
-    <footer className={"footer " + className} style={style}>
+    <div className={"dropdown " + className} style={style}>
       {children}
-    </footer>
+    </div>
   );
 };
 
-export default Footer;
+export default Button;
