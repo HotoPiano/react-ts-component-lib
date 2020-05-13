@@ -8,7 +8,10 @@ type Props = {
 
 const Footer: React.FC<Props> = ({ children, className, style }) => {
   return (
-    <footer className={"footer " + className} style={style}>
+    <footer
+      className={"footer" + (className ? " " + className : "")}
+      style={style}
+    >
       {children}
     </footer>
   );

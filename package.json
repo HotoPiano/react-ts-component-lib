@@ -1,6 +1,6 @@
 {
   "name": "react-ts-component-lib",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "",
   "keywords": [
     "react",
@@ -30,12 +30,14 @@
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.5.3",
+    "image-webpack-loader": "^6.0.0",
     "less": "^3.11.1",
     "less-loader": "^6.0.0",
     "mkdirp": "^1.0.4",
     "react": "^16.13.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.7.6",
+    "rollup-plugin-img": "^1.1.0",
     "rollup-plugin-postcss": "^3.1.1",
     "rollup-plugin-typescript2": "^0.27.0",
     "style-loader": "^1.2.1",
@@ -43,7 +45,6 @@
     "webpack": "^4.43.0",
     "yarn": "^1.22.4"
   },
-  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/HotoPiano/react-ts-component-lib"

@@ -18,8 +18,7 @@ const H: React.FC<Props> = ({
   const defaultStyle: React.CSSProperties = {};
   const _className =
     type +
-    " " +
-    className +
+    (className ? " " + className : "") +
     (darkBackground ? " darkBackground" : " brightBackground");
   return type === "h1" ? (
     <h1 className={_className} style={{ ...style, ...defaultStyle }}>

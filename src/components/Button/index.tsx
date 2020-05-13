@@ -24,7 +24,7 @@ const Button: React.FC<Props> = ({
   const _className =
     "button button__" +
     variant +
-    (disabled ? " button--disabled" : "") +
+    (disabled ? " button--disabled " : " ") +
     (className ? " " + className : "");
   return (
     <button

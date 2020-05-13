@@ -20,10 +20,11 @@ const Link: React.FC<Props> = ({
 }) => {
   const _className =
     "link " +
-    className +
+    (className ? className + " " : " ") +
     (darkBackground
-      ? " darkBackground darkBackground-link"
-      : " brightBackground brightBackground-link");
+      ? "darkBackground darkBackground-link"
+      : "brightBackground brightBackground-link");
+
   /*
   const variantStyle: React.CSSProperties = darkBackground
     ? {
@@ -33,6 +34,7 @@ const Link: React.FC<Props> = ({
   const defaultStyle: React.CSSProperties = { cursor: "pointer" };
   //style={{ ...style, ...defaultStyle, ...variantStyle }}
     */
+
   return (
     <a href={href} className={_className} onClick={onClick} style={style}>
       {children}

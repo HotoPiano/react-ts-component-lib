@@ -1,5 +1,6 @@
 import typescript from "rollup-plugin-typescript2";
 import postcss from "rollup-plugin-postcss";
+import image from "rollup-plugin-img";
 import pkg from "./package.json";
 
 export default {
@@ -12,5 +13,5 @@ export default {
     ...Object.keys(pkg.dependencies || {}),
     ...Object.keys(pkg.peerDependencies || {}),
   ],
-  plugins: [typescript(), postcss({ plugins: [] })],
+  plugins: [typescript(), postcss({ plugins: [] }), image({ limit: 10000 })],
 };
