@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./index.less";
 
@@ -8,6 +8,7 @@ import H from "./H";
 import Button from "./Button";
 import Link from "./Link";
 import Dropdown from "./Dropdown";
+import Infobox from "./Infobox";
 
 const Basic: React.FC = () => {
   return (
@@ -28,7 +29,7 @@ const Basic: React.FC = () => {
             { text: "Item3", value: "i3" },
           ]}
           onSelect={(value: string) => console.log("selected: " + value)}
-          text={"list"}
+          text={"Dropdown"}
           darkBackground
         />
       </Header>
@@ -41,10 +42,10 @@ const Basic: React.FC = () => {
           <H type="h6">Header6</H>
         </div>
         <br />
-        <div>
+        <div style={{ marginTop: 50 }}>
           <Button
             variant="default"
-            style={{ margin: 10 }}
+            style={{ marginRight: 20 }}
             onClick={() => {
               console.log("clicked!");
             }}
@@ -53,7 +54,7 @@ const Basic: React.FC = () => {
           </Button>
           <Button
             variant="primary"
-            style={{ margin: 10 }}
+            style={{ marginRight: 20 }}
             onClick={() => {
               console.log("clicked!");
             }}
@@ -62,7 +63,7 @@ const Basic: React.FC = () => {
           </Button>
           <Button
             variant="secondary"
-            style={{ margin: 10 }}
+            style={{ marginRight: 20 }}
             onClick={() => {
               console.log("clicked!");
             }}
@@ -72,7 +73,7 @@ const Basic: React.FC = () => {
           <Button
             variant="primary"
             disabled
-            style={{ margin: 10 }}
+            style={{ marginRight: 20 }}
             onClick={() => {
               console.log("clicked!");
             }}
@@ -81,11 +82,11 @@ const Basic: React.FC = () => {
           </Button>
         </div>
         <br />
-        <div>
+        <div style={{ marginTop: 50 }}>
           <Link href="#/test">Link</Link>
         </div>
         <br />
-        <div>
+        <div style={{ marginTop: 50 }}>
           <Dropdown
             dropdownItems={[
               { text: "Item1", value: "i1" },
@@ -93,7 +94,7 @@ const Basic: React.FC = () => {
               { text: "Item3", value: "i3" },
             ]}
             onSelect={(value: string) => console.log("selected: " + value)}
-            text={"List"}
+            text={"Dropdown"}
           />
           <Dropdown
             buttonStyle={{ marginLeft: 50 }}
@@ -103,12 +104,34 @@ const Basic: React.FC = () => {
               { text: "Item3", value: "i3" },
             ]}
             onSelect={(value: string) => console.log("selected: " + value)}
-            text={"List firstItemDefaultSelected closeOnBlur closeOnEscape"}
+            text={"Dropdown modified"}
             firstItemDefaultSelected
             closeOnBlur
             closeOnEscape
+            fitMinWidth
           />
         </div>
+        <div style={{ marginTop: 50 }}>
+          <Infobox>
+            <p style={{ margin: "12px 0" }}>Infobox leftside</p>
+          </Infobox>
+          <Infobox rightSide>
+            <p style={{ margin: "12px 0" }}>Infobox rightside</p>
+          </Infobox>
+          <Infobox onClick={() => console.log("testClick")}>
+            <p style={{ margin: "12px 0" }}>Infobox button leftside</p>
+          </Infobox>
+          <Infobox rightSide onClick={() => console.log("testClick")}>
+            <p style={{ margin: "12px 0" }}>Infobox button rightside</p>
+          </Infobox>
+          <Infobox href="#/test">
+            <p style={{ margin: "12px 0" }}>Infobox link leftside</p>
+          </Infobox>
+          <Infobox rightSide href="#/test">
+            <p style={{ margin: "12px 0" }}>Infobox link rightside</p>
+          </Infobox>
+        </div>
+        <div style={{ marginTop: 50 }}></div>
       </div>
       <Footer>
         <H type="h3" darkBackground>
@@ -119,6 +142,6 @@ const Basic: React.FC = () => {
   );
 };
 
-export default { title: "Basic" };
+export default { title: "Library" };
 
 export const basic = () => <Basic />;

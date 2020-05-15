@@ -1,0 +1,47 @@
+@import "./../palette.less";
+
+.infobox-wrapper {
+  display: flex;
+}
+
+.infobox-content {
+  &&-left {
+    flex: 1;
+  }
+
+  &&-right {
+    display: inline-flex;
+  }
+}
+
+.infobox {
+  font-size: 14px;
+  color: @color-floralwhite;
+  text-align: center;
+  background-color: @color-granitegrey;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+
+  &&-left {
+    margin: 10px 15px 10px 0;
+  }
+  &&-right {
+    margin: 10px 0 10px 15px;
+  }
+
+  &&__link {
+    text-decoration: none;
+    &&:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &&__button {
+    border: none;
+    &&:hover:enabled {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+}

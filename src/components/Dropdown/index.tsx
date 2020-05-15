@@ -12,6 +12,7 @@ type Props = {
   darkBackground?: boolean;
   closeOnBlur?: boolean;
   closeOnEscape?: boolean;
+  fitMinWidth?: boolean;
 };
 
 type DropdownItem = {
@@ -30,9 +31,10 @@ const Dropdown: React.FC<Props> = ({
   darkBackground,
   closeOnBlur,
   closeOnEscape,
+  fitMinWidth,
 }) => {
   const [showList, setShowList] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(
+  const [selectedItem, setSelectedItem] = useState<DropdownItem | null>(
     firstItemDefaultSelected ? dropdownItems[0] : null
   );
   const inputRef: any = useRef(null);
@@ -65,9 +67,7 @@ const Dropdown: React.FC<Props> = ({
         onClick={() => setShowList(!showList)}
         className={_className}
         style={buttonStyle}
-        onBlur={() => {
-          closeOnBlur ? setShowList(false) : null;
-        }}
+        onBlur={() => closeOnBlur && setShowList(false)}
       >
         {text}
         <img
@@ -80,10 +80,18 @@ const Dropdown: React.FC<Props> = ({
       {showList && (
         <ul
           className="dropdown-list"
-          style={{
-            left: inputRef.current.offsetLeft,
-            top: inputRef.current.offsetTop + 10,
-          }}
+          style={
+            fitMinWidth
+              ? {
+                  left: inputRef.current.offsetLeft - 1,
+                  top: inputRef.current.offsetTop + 10,
+                  minWidth: inputRef.current.clientWidth,
+                }
+              : {
+                  left: inputRef.current.offsetLeft,
+                  top: inputRef.current.offsetTop + 10,
+                }
+          }
         >
           {dropdownItems.map((dropdownItem) => {
             return (
@@ -98,7 +106,11 @@ const Dropdown: React.FC<Props> = ({
                   }
                   onClick={() => {
                     setSelectedItem(dropdownItem);
+                    setShowList(false);
                     onSelect(dropdownItem.value);
+                  }}
+                  onMouseDown={(event: any) => {
+                    closeOnBlur && event.preventDefault();
                   }}
                 >
                   {dropdownItem.text}
