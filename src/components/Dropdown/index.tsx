@@ -87,7 +87,11 @@ const Dropdown: React.FC<Props> = ({
           }}
         >
           <ul
-            className="dropdown-list"
+            className={`dropdown-list ${
+              buttonRef.current.offsetLeft > 0
+                ? "dropdown-list-right"
+                : "dropdown-list-left"
+            }`}
             style={
               fitMinWidth
                 ? {

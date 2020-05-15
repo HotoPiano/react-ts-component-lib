@@ -89,7 +89,7 @@ const Basic: React.FC = () => {
         <div style={{ marginTop: 50 }}>
           <Dropdown
             dropdownItems={[
-              { text: "Item1", value: "i1" },
+              { text: "Very long item text", value: "i1" },
               { text: "Item2", value: "i2" },
               { text: "Item3", value: "i3" },
             ]}
