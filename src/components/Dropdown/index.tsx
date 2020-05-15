@@ -37,7 +37,7 @@ const Dropdown: React.FC<Props> = ({
   const [selectedItem, setSelectedItem] = useState<DropdownItem | null>(
     firstItemDefaultSelected ? dropdownItems[0] : null
   );
-  const inputRef: any = useRef(null);
+  const buttonRef: any = useRef(null);
 
   useEffect(() => {
     if (closeOnEscape) {
@@ -63,7 +63,7 @@ const Dropdown: React.FC<Props> = ({
   return (
     <>
       <button
-        ref={inputRef}
+        ref={buttonRef}
         onClick={() => setShowList(!showList)}
         className={_className}
         style={buttonStyle}
@@ -78,47 +78,51 @@ const Dropdown: React.FC<Props> = ({
       </button>
 
       {showList && (
-        <ul
-          className="dropdown-list"
-          style={
-            fitMinWidth
-              ? {
-                  left: inputRef.current.offsetLeft - 1,
-                  top: inputRef.current.offsetTop + 10,
-                  minWidth: inputRef.current.clientWidth,
-                }
-              : {
-                  left: inputRef.current.offsetLeft,
-                  top: inputRef.current.offsetTop + 10,
-                }
-          }
+        <div
+          className="dropdown-listbox"
+          style={{
+            minWidth: buttonRef.current.clientWidth,
+            left: buttonRef.current.offsetLeft,
+            top: buttonRef.current.offsetTop + 10,
+          }}
         >
-          {dropdownItems.map((dropdownItem) => {
-            return (
-              <li key={`${dropdownItem.value} - ${dropdownItem.value}`}>
-                <a
-                  className={
-                    "dropdown-option" +
-                    (selectedItem != null &&
-                    selectedItem.value === dropdownItem.value
-                      ? " dropdown-option--selected"
-                      : "")
+          <ul
+            className="dropdown-list"
+            style={
+              fitMinWidth
+                ? {
+                    minWidth: buttonRef.current.clientWidth,
                   }
-                  onClick={() => {
-                    setSelectedItem(dropdownItem);
-                    setShowList(false);
-                    onSelect(dropdownItem.value);
-                  }}
-                  onMouseDown={(event: any) => {
-                    closeOnBlur && event.preventDefault();
-                  }}
-                >
-                  {dropdownItem.text}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
+                : {}
+            }
+          >
+            {dropdownItems.map((dropdownItem) => {
+              return (
+                <li key={`${dropdownItem.value} - ${dropdownItem.value}`}>
+                  <a
+                    className={
+                      "dropdown-option" +
+                      (selectedItem != null &&
+                      selectedItem.value === dropdownItem.value
+                        ? " dropdown-option--selected"
+                        : "")
+                    }
+                    onClick={() => {
+                      setSelectedItem(dropdownItem);
+                      setShowList(false);
+                      onSelect(dropdownItem.value);
+                    }}
+                    onMouseDown={(event: any) => {
+                      closeOnBlur && event.preventDefault();
+                    }}
+                  >
+                    {dropdownItem.text}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       )}
     </>
   );
