@@ -99,12 +99,17 @@ const Basic: React.FC = () => {
           <Dropdown
             buttonStyle={{ marginLeft: 50 }}
             dropdownItems={[
-              { text: "Item1", value: "i1" },
-              { text: "Item2", value: "i2" },
-              { text: "Item3", value: "i3" },
+              { text: "Potato", value: "i1" },
+              { text: "Fish", value: "i2" },
+              { text: "Tea", value: "i4" },
+              { text: "Grapes", value: "i5" },
+              { text: "Oranges", value: "i6" },
+              { text: "Apples", value: "i7" },
+              { text: "Musk ox", value: "i8" },
             ]}
             onSelect={(value: string) => console.log("selected: " + value)}
             text={"Dropdown modified"}
+            highlightSelected
             firstItemDefaultSelected
             closeOnBlur
             closeOnEscape

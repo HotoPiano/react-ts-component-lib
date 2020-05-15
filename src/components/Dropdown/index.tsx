@@ -8,6 +8,7 @@ type Props = {
   text: string;
   dropdownItems: DropdownItem[];
   onSelect: (value: string) => void;
+  highlightSelected?: boolean;
   firstItemDefaultSelected?: boolean;
   darkBackground?: boolean;
   closeOnBlur?: boolean;
@@ -27,6 +28,7 @@ const Dropdown: React.FC<Props> = ({
   text,
   dropdownItems,
   onSelect,
+  highlightSelected,
   firstItemDefaultSelected,
   darkBackground,
   closeOnBlur,
@@ -106,7 +108,8 @@ const Dropdown: React.FC<Props> = ({
                   <a
                     className={
                       "dropdown-option" +
-                      (selectedItem != null &&
+                      (highlightSelected &&
+                      selectedItem != null &&
                       selectedItem.value === dropdownItem.value
                         ? " dropdown-option--selected"
                         : "")
