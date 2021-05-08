@@ -20,6 +20,6 @@ jobs:
         with:
           node-version: 14.16.1
       - name: install dependencies
-        run: npm ci
+        run: npm install #npm ci enough if package-lock exists
       - name: perform audit
         run: npm audit
