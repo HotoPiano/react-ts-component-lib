@@ -6,7 +6,7 @@ on:
     branches:
       - master
   schedule:
-  - cron: '0 3 * * *'
+    - cron: '0 3 * * *'
 
 jobs:
   scan:
@@ -14,11 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: install dependencies
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.5
         with:
-         node-version: 14.16.1
+          node-version: 14.16.1
       - name: install dependencies
         run: npm ci
       - name: perform audit
