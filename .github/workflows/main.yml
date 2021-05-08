@@ -6,21 +6,20 @@ on:
     branches:
       - master
   schedule:
-  - cron: '20 12 * * *'
-  #- cron: '0 3 * * *'
+  - cron: '0 3 * * *'
 
 jobs:
   scan:
     name: npm audit
     runs-on: ubuntu-latest
     steps:
+      - name: install dependencies
       - uses: actions/checkout@v2
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.5
+        with:
+         node-version: 14.16.1
       - name: install dependencies
         run: npm ci
-      - uses: oke-py/npm-audit-action@v1.7.1
-        with:
-          audit_level: moderate
-          github_token: ${{ secrets.VERY_HIDDEN_ONLY_HERE_SECRET }}
-          issue_assignees: oke-py
-          issue_labels: vulnerability,test
-          dedupe_issues: true
+      - name: perform audit
+        run: npm audit
